@@ -9,8 +9,8 @@ CLI-Anything：连接 AI Agent 与全世界软件的桥梁</strong><br>
 
 <p align="center">
   <a href="#-快速上手"><img src="https://img.shields.io/badge/快速上手-5_分钟-blue?style=for-the-badge" alt="Quick Start"></a>
-  <a href="#-实测展示"><img src="https://img.shields.io/badge/Demo-15_款软件-green?style=for-the-badge" alt="Demos"></a>
-  <a href="#-测试结果"><img src="https://img.shields.io/badge/测试-1%2C649_通过-brightgreen?style=for-the-badge" alt="Tests"></a>
+  <a href="#-实测展示"><img src="https://img.shields.io/badge/Demo-16_款软件-green?style=for-the-badge" alt="Demos"></a>
+  <a href="#-测试结果"><img src="https://img.shields.io/badge/测试-1%2C681_通过-brightgreen?style=for-the-badge" alt="Tests"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="License"></a>
 </p>
 
@@ -472,7 +472,7 @@ CLI-Anything 适用于任何有代码库的软件 —— 不限领域，不限�
 
 ### 🏭 专业级测试
 
-在 15 款复杂应用上进行了实测，涵盖创意、生产力、通信、调试、图表和 AI 内容生成领域 —— 这些软件此前对 AI Agent 来说几乎不可触及。
+在 16 款复杂应用上进行了实测，涵盖创意、生产力、通信、图表、原生调试、GPU 调试和 AI 内容生成领域 —— 这些软件此前对 AI Agent 来说几乎不可触及。
 
 ### 🎨 覆盖多元领域
 
@@ -596,12 +596,19 @@ CLI-Anything 适用于任何有代码库的软件 —— 不限领域，不限�
 <td align="center">✅ 19</td>
 </tr>
 <tr>
+<td align="center"><strong>🟩 <a href="nsight-graphics/agent-harness/">Nsight Graphics CLI</a></strong></td>
+<td>GPU 调试与性能分析</td>
+<td><code>cli-anything-nsight-graphics</code></td>
+<td>官方 ngfx / ngfx-capture 编排 + GPU Trace 摘要</td>
+<td align="center">✅ 32</td>
+</tr>
+<tr>
 <td align="center" colspan="4"><strong>合计</strong></td>
-<td align="center"><strong>✅ 1,649</strong></td>
+<td align="center"><strong>✅ 1,681</strong></td>
 </tr>
 </table>
 
-> 全部 1,649 项测试 **100% 通过** —— 1,169 项单元测试 + 461 项端到端测试 + 19 项 Node.js 测试。
+> 全部 1,681 项测试 **100% 通过** —— 1,200 项单元测试 + 462 项端到端测试 + 19 项 Node.js 测试。
 
 ---
 
@@ -632,8 +639,9 @@ drawio        138 passed  ✅   (116 unit + 22 e2e)
 lldb           21 passed  ✅   (18 unit + 3 e2e, 1 core e2e skipped)
 anygen         50 passed  ✅   (40 unit + 10 e2e)
 sketch         19 passed  ✅   (19 jest, Node.js)
+nsight-graphics 32 passed ✅   (31 unit + 1 e2e)
 ──────────────────────────────────────────────────────────────────────────────
-TOTAL        1,649 passed  ✅   100% pass rate
+TOTAL        1,681 passed  ✅   100% pass rate
 ```
 
 ---
@@ -701,7 +709,8 @@ cli-anything/
 ├── 📐 drawio/agent-harness/             # Draw.io CLI（138 项测试）
 ├── 🐞 lldb/agent-harness/               # LLDB CLI（21 项测试）
 ├── ✨ anygen/agent-harness/             # AnyGen CLI（50 项测试）
-└── 🎨 sketch/agent-harness/             # Sketch CLI（19 项测试，Node.js）
+├── 🎨 sketch/agent-harness/             # Sketch CLI（19 项测试，Node.js）
+└── 🟩 nsight-graphics/agent-harness/    # Nsight Graphics CLI（32 项测试）
 ```
 
 每个 `agent-harness/` 包含一个可安装的 Python 包，位于 `cli_anything.<软件名>/` 下，包含 Click CLI、核心模块、工具类（含 `repl_skin.py` 和后端适配器）以及完整的测试。

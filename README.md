@@ -14,8 +14,8 @@ CLI-Anything: Bridging the Gap Between AI Agents and the World's Software</stron
 <p align="center">
   <a href="#-quick-start"><img src="https://img.shields.io/badge/Quick_Start-5_min-blue?style=for-the-badge" alt="Quick Start"></a>
   <a href="https://hkuds.github.io/CLI-Anything/"><img src="https://img.shields.io/badge/CLI_Hub-Browse_%26_Install-ff69b4?style=for-the-badge" alt="CLI Hub"></a>
-  <a href="#-demonstrations"><img src="https://img.shields.io/badge/Demos-31_Apps-green?style=for-the-badge" alt="Demos"></a>
-  <a href="#-test-results"><img src="https://img.shields.io/badge/Tests-2%2C159_Passing-brightgreen?style=for-the-badge" alt="Tests"></a>
+  <a href="#-demonstrations"><img src="https://img.shields.io/badge/Demos-33_Apps-green?style=for-the-badge" alt="Demos"></a>
+  <a href="#-test-results"><img src="https://img.shields.io/badge/Tests-2%2C356_Passing-brightgreen?style=for-the-badge" alt="Tests"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="License"></a>
 </p>
 
@@ -566,7 +566,7 @@ The catalog auto-updates whenever `registry.json` changes — new community CLIs
 | **📐 Diagramming & Visualization** | Create and manipulate diagrams, flowcharts, architecture diagrams, and visual documentation programmatically | Draw.io (diagrams.net), Mermaid, PlantUML, Excalidraw, yEd |
 | **🌐 Network & Infrastructure** | Manage network services, DNS, ad-blocking, and infrastructure through structured CLI commands | AdGuardHome |
 | **🧪 Testing & Mocking** | Control HTTP mock servers, manage test stubs, record and replay API traffic for integration testing | **[WireMock](https://wiremock.org)** |
-| **🔬 Graphics & GPU Debugging** | Analyze GPU frame captures, inspect pipeline state, export shaders, and diff rendering state | RenderDoc |
+| **🔬 Graphics & GPU Debugging** | Analyze GPU frame captures, inspect pipeline state, export shaders, diff rendering state, orchestrate Nsight Graphics captures, and summarize GPU Trace hotspots | RenderDoc, Nsight Graphics |
 | **🐞 Native Debugging** | Inspect processes, threads, frames, breakpoints, expressions, and memory through debugger-native APIs | **[LLDB](https://lldb.llvm.org)** |
 | **🎬 Video & Subtitles** | Transcribe speech, translate subtitles, burn styled captions into video — full captioning pipeline | VideoCaptioner |
 | **🔍 AI-Native Search** | Neural and deep web search with structured content retrieval through embedding-based APIs | [Exa](https://exa.ai) |
@@ -587,7 +587,7 @@ AI agents are great at reasoning but terrible at using real professional softwar
 | 💸 "UI automation breaks constantly" | No screenshots, no clicking, no RPA fragility. Pure command-line reliability with structured interfaces |
 | 📊 "Agents need structured data" | Built-in JSON output for seamless agent consumption + human-readable formats for debugging |
 | 🔧 "Custom integrations are expensive" | One Claude plugin auto-generates CLIs for ANY codebase through proven 7-phase pipeline |
-| ⚡ "Prototype vs Production gap" | 2,159+ tests with real software validation. Battle-tested across 31 major applications |
+| ⚡ "Prototype vs Production gap" | 2,356 counted tests across 30 battle-tested applications, plus 3 newer integrations already documented |
 
 ---
 
@@ -746,7 +746,7 @@ An agent uses the VideoCaptioner CLI to automatically generate and overlay style
 CLI-Anything works on any software with a codebase — no domain restrictions or architectural limitations.
 
 ### 🏭 Professional-Grade Testing
-Tested across 31 diverse, complex applications spanning creative, productivity, communication, debugging, diagramming, AI image generation, AI content generation, network ad blocking, and local LLM inference domains previously inaccessible to AI agents.
+Showcases 33 application integrations, including 30 with 2,356 counted passing tests across creative, productivity, communication, native debugging, GPU debugging, diagramming, AI image generation, AI content generation, network ad blocking, and local LLM inference workflows.
 
 ### 🎨 Diverse Domain Coverage
 From creative workflows (image editing, 3D modeling, vector graphics) to production tools (audio, office, live streaming, video editing).
@@ -966,6 +966,20 @@ Each application received complete, production-ready CLI interfaces — not demo
 <td align="center">✅ 24</td>
 </tr>
 <tr>
+<td align="center"><strong>🟩 <a href="nsight-graphics/agent-harness/">Nsight Graphics CLI</a></strong></td>
+<td>GPU Debugging & Profiling</td>
+<td><code>cli-anything-nsight-graphics</code></td>
+<td>Official ngfx / ngfx-capture orchestration + GPU Trace summary</td>
+<td align="center">✅ 32</td>
+</tr>
+<tr>
+<td align="center"><strong>🅲🅲 CloudCompare</strong></td>
+<td>3D Point Cloud & Mesh</td>
+<td><code>cli-anything-cloudcompare</code></td>
+<td>CloudCompare CLI (headless)</td>
+<td align="center">✅ 88</td>
+</tr>
+<tr>
 <td align="center"><strong>🔍 <a href="exa/agent-harness/">Exa</a></strong></td>
 <td>AI-Native Web Search</td>
 <td><code>cli-anything-exa</code></td>
@@ -981,11 +995,11 @@ Each application received complete, production-ready CLI interfaces — not demo
 </tr>
 <tr>
 <td align="center" colspan="4"><strong>Total</strong></td>
-<td align="center"><strong>✅ 2,159</strong></td>
+<td align="center"><strong>✅ 2,356</strong></td>
 </tr>
 </table>
 
-> **100% pass rate** across all 2,159 tests — 1,570 unit tests + 570 end-to-end tests + 19 Node.js tests.
+> **100% pass rate** across all 2,356 counted tests in the table above, with newer integrations called out separately where they are still marked as "New" or "55+ cmds".
 
 ---
 
@@ -1012,22 +1026,29 @@ obs-studio    153 passed  ✅   (116 unit + 37 e2e)
 kdenlive      155 passed  ✅   (111 unit + 44 e2e)
 shotcut       154 passed  ✅   (110 unit + 44 e2e)
 zoom           22 passed  ✅   (22 unit + 0 e2e)
+musescore      56 passed  ✅   (39 unit + 17 e2e)
 drawio        138 passed  ✅   (116 unit + 22 e2e)
 lldb           21 passed  ✅   (18 unit + 3 e2e, 1 core e2e skipped)
 eth2-quickstart 18 passed ✅   (18 unit + 3 e2e skipped)
 mermaid        10 passed  ✅   (5 unit + 5 e2e)
 anygen         50 passed  ✅   (40 unit + 10 e2e)
 notebooklm     21 passed  ✅   (21 unit + 0 e2e)
+dify-workflow  11 passed  ✅   (wrapper coverage)
 comfyui        70 passed  ✅   (60 unit + 10 e2e)
 adguardhome    36 passed  ✅   (24 unit + 12 e2e)
 ollama         98 passed  ✅   (87 unit + 11 e2e)
+unimol_tools   67 passed  ✅   (unit suite)
 sketch         19 passed  ✅   (19 jest, Node.js)
+videocaptioner 26 passed  ✅   (subprocess + workflow coverage)
+godot          24 passed  ✅   (project + scene + script workflow)
 renderdoc      59 passed  ✅   (45 unit + 14 e2e)
 cloudcompare   88 passed  ✅   (49 unit + 39 e2e)
+exa            40 passed  ✅   (API + CLI coverage)
+nsight-graphics 32 passed ✅   (31 unit + 1 e2e)
 openscreen    101 passed  ✅   (78 unit + 23 e2e)
 cloudanalyzer  14 passed  ✅   (7 unit + 7 e2e)
 ──────────────────────────────────────────────────────────────────────────────
-TOTAL        2,159 passed  ✅   100% pass rate
+TOTAL        2,356 passed  ✅   100% pass rate
 ```
 
 ---
@@ -1107,6 +1128,7 @@ cli-anything/
 ├── ☁️ cloudcompare/agent-harness/       # CloudCompare CLI (88 tests)
 ├── 🔍 exa/agent-harness/                # Exa CLI (40 tests)
 └── ⛅ cloudanalyzer/agent-harness/      # CloudAnalyzer CLI (14 tests)
+├── 🟩 nsight-graphics/agent-harness/    # Nsight Graphics CLI (32 tests)
 ```
 
 Each `agent-harness/` contains an installable Python package under `cli_anything.<software>/` with Click CLI, core modules, utils (including `repl_skin.py` and backend wrapper), and comprehensive tests.
@@ -1207,7 +1229,7 @@ HARNESS.md is our definitive SOP for making any software agent-accessible via au
 
 It encodes proven patterns and methodologies refined through automated generation processes.
 
-The playbook distills key insights from successfully building all 31 diverse, production-ready harnesses.
+The playbook distills key insights from successfully building all 33 diverse, production-ready harnesses.
 
 ### Critical Lessons
 
@@ -1332,7 +1354,7 @@ MIT License — free to use, modify, and distribute.
 
 **CLI-Anything** — *Make any software with a codebase Agent-native.*
 
-<sub>A methodology for the age of AI agents | 31 professional software demos | 2,159 passing tests</sub>
+<sub>A methodology for the age of AI agents | 33 professional software demos | 2,356 passing tests</sub>
 
 <br>
 

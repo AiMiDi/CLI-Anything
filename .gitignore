@@ -95,6 +95,7 @@
 !/n8n/
 !/obsidian/
 !/lldb/
+!/nsight-graphics/
 
 # Step 5: Inside each software dir, ignore everything (including dotfiles)
 /gimp/*
@@ -177,6 +178,8 @@
 /obsidian/.*
 /lldb/*
 /lldb/.*
+/nsight-graphics/*
+/nsight-graphics/.*
 
 # Step 6: ...except agent-harness/
 !/gimp/agent-harness/
@@ -225,6 +228,7 @@
 !/safari/
 !/safari/agent-harness/
 !/lldb/agent-harness/
+!/nsight-graphics/agent-harness/
 
 # Step 7: Ignore build artifacts within allowed dirs
 **/__pycache__/
