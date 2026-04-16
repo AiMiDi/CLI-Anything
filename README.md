@@ -14,8 +14,8 @@ CLI-Anything: Bridging the Gap Between AI Agents and the World's Software</stron
 <p align="center">
   <a href="#-quick-start"><img src="https://img.shields.io/badge/Quick_Start-5_min-blue?style=for-the-badge" alt="Quick Start"></a>
   <a href="https://hkuds.github.io/CLI-Anything/"><img src="https://img.shields.io/badge/CLI_Hub-Browse_%26_Install-ff69b4?style=for-the-badge" alt="CLI Hub"></a>
-  <a href="#-demonstrations"><img src="https://img.shields.io/badge/Demos-16_Apps-green?style=for-the-badge" alt="Demos"></a>
-  <a href="#-test-results"><img src="https://img.shields.io/badge/Tests-2%2C130_Passing-brightgreen?style=for-the-badge" alt="Tests"></a>
+  <a href="#-demonstrations"><img src="https://img.shields.io/badge/Demos-31_Apps-green?style=for-the-badge" alt="Demos"></a>
+  <a href="#-test-results"><img src="https://img.shields.io/badge/Tests-2%2C159_Passing-brightgreen?style=for-the-badge" alt="Tests"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="License"></a>
 </p>
 
@@ -567,6 +567,7 @@ The catalog auto-updates whenever `registry.json` changes — new community CLIs
 | **🌐 Network & Infrastructure** | Manage network services, DNS, ad-blocking, and infrastructure through structured CLI commands | AdGuardHome |
 | **🧪 Testing & Mocking** | Control HTTP mock servers, manage test stubs, record and replay API traffic for integration testing | **[WireMock](https://wiremock.org)** |
 | **🔬 Graphics & GPU Debugging** | Analyze GPU frame captures, inspect pipeline state, export shaders, and diff rendering state | RenderDoc |
+| **🐞 Native Debugging** | Inspect processes, threads, frames, breakpoints, expressions, and memory through debugger-native APIs | **[LLDB](https://lldb.llvm.org)** |
 | **🎬 Video & Subtitles** | Transcribe speech, translate subtitles, burn styled captions into video — full captioning pipeline | VideoCaptioner |
 | **🔍 AI-Native Search** | Neural and deep web search with structured content retrieval through embedding-based APIs | [Exa](https://exa.ai) |
 | **✨ AI Content Generation** | Generate professional deliverables (slides, docs, diagrams, websites, research reports) through AI-powered cloud APIs | [AnyGen](https://www.anygen.io), Gamma, Beautiful.ai, Tome |
@@ -586,7 +587,7 @@ AI agents are great at reasoning but terrible at using real professional softwar
 | 💸 "UI automation breaks constantly" | No screenshots, no clicking, no RPA fragility. Pure command-line reliability with structured interfaces |
 | 📊 "Agents need structured data" | Built-in JSON output for seamless agent consumption + human-readable formats for debugging |
 | 🔧 "Custom integrations are expensive" | One Claude plugin auto-generates CLIs for ANY codebase through proven 7-phase pipeline |
-| ⚡ "Prototype vs Production gap" | 1,839+ tests with real software validation. Battle-tested across 16 major applications |
+| ⚡ "Prototype vs Production gap" | 2,159+ tests with real software validation. Battle-tested across 31 major applications |
 
 ---
 
@@ -745,7 +746,7 @@ An agent uses the VideoCaptioner CLI to automatically generate and overlay style
 CLI-Anything works on any software with a codebase — no domain restrictions or architectural limitations.
 
 ### 🏭 Professional-Grade Testing
-Tested across 16 diverse, complex applications spanning creative, productivity, communication, diagramming, AI image generation, AI content generation, network ad blocking, and local LLM inference domains previously inaccessible to AI agents.
+Tested across 31 diverse, complex applications spanning creative, productivity, communication, debugging, diagramming, AI image generation, AI content generation, network ad blocking, and local LLM inference domains previously inaccessible to AI agents.
 
 ### 🎨 Diverse Domain Coverage
 From creative workflows (image editing, 3D modeling, vector graphics) to production tools (audio, office, live streaming, video editing).
@@ -874,6 +875,13 @@ Each application received complete, production-ready CLI interfaces — not demo
 <td align="center">✅ 138</td>
 </tr>
 <tr>
+<td align="center"><strong>🐞 <a href="lldb/agent-harness/">LLDB</a></strong></td>
+<td>Native Debugging</td>
+<td><code>cli-anything-lldb</code></td>
+<td>LLDB Python API</td>
+<td align="center">✅ 21</td>
+</tr>
+<tr>
 <td align="center"><strong>⛓️ ETH2 QuickStart</strong></td>
 <td>DevOps / Ethereum</td>
 <td><code>cli-anything-eth2-quickstart</code></td>
@@ -973,11 +981,11 @@ Each application received complete, production-ready CLI interfaces — not demo
 </tr>
 <tr>
 <td align="center" colspan="4"><strong>Total</strong></td>
-<td align="center"><strong>✅ 2,130</strong></td>
+<td align="center"><strong>✅ 2,159</strong></td>
 </tr>
 </table>
 
-> **100% pass rate** across all 2,130 tests — 1,551 unit tests + 560 end-to-end tests + 19 Node.js tests.
+> **100% pass rate** across all 2,159 tests — 1,570 unit tests + 570 end-to-end tests + 19 Node.js tests.
 
 ---
 
@@ -1005,6 +1013,7 @@ kdenlive      155 passed  ✅   (111 unit + 44 e2e)
 shotcut       154 passed  ✅   (110 unit + 44 e2e)
 zoom           22 passed  ✅   (22 unit + 0 e2e)
 drawio        138 passed  ✅   (116 unit + 22 e2e)
+lldb           21 passed  ✅   (18 unit + 3 e2e, 1 core e2e skipped)
 eth2-quickstart 18 passed ✅   (18 unit + 3 e2e skipped)
 mermaid        10 passed  ✅   (5 unit + 5 e2e)
 anygen         50 passed  ✅   (40 unit + 10 e2e)
@@ -1018,7 +1027,7 @@ cloudcompare   88 passed  ✅   (49 unit + 39 e2e)
 openscreen    101 passed  ✅   (78 unit + 23 e2e)
 cloudanalyzer  14 passed  ✅   (7 unit + 7 e2e)
 ──────────────────────────────────────────────────────────────────────────────
-TOTAL        2,120 passed  ✅   100% pass rate
+TOTAL        2,159 passed  ✅   100% pass rate
 ```
 
 ---
@@ -1092,10 +1101,11 @@ cli-anything/
 ├── 🎮 godot/agent-harness/              # Godot Engine CLI (24 tests)
 ├── 🎨 sketch/agent-harness/             # Sketch CLI (19 tests, Node.js)
 ├── 🔬 renderdoc/agent-harness/          # RenderDoc CLI (59 tests)
+├── 🐞 lldb/agent-harness/               # LLDB CLI (21 tests)
 ├── 🎬 videocaptioner/agent-harness/     # VideoCaptioner CLI (26 tests)
 ├── 🎬 openscreen/agent-harness/         # Openscreen CLI — screen recording editor (101 tests)
 ├── ☁️ cloudcompare/agent-harness/       # CloudCompare CLI (88 tests)
-├── 🔍 exa/agent-harness/               # Exa CLI (40 tests)
+├── 🔍 exa/agent-harness/                # Exa CLI (40 tests)
 └── ⛅ cloudanalyzer/agent-harness/      # CloudAnalyzer CLI (14 tests)
 ```
 
@@ -1197,7 +1207,7 @@ HARNESS.md is our definitive SOP for making any software agent-accessible via au
 
 It encodes proven patterns and methodologies refined through automated generation processes.
 
-The playbook distills key insights from successfully building all 16 diverse, production-ready harnesses.
+The playbook distills key insights from successfully building all 31 diverse, production-ready harnesses.
 
 ### Critical Lessons
 
@@ -1322,7 +1332,7 @@ MIT License — free to use, modify, and distribute.
 
 **CLI-Anything** — *Make any software with a codebase Agent-native.*
 
-<sub>A methodology for the age of AI agents | 16 professional software demos | 1,839 passing tests</sub>
+<sub>A methodology for the age of AI agents | 31 professional software demos | 2,159 passing tests</sub>
 
 <br>
 
