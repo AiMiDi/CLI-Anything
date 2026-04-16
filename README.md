@@ -14,8 +14,8 @@ CLI-Anything: Bridging the Gap Between AI Agents and the World's Software</stron
 <p align="center">
   <a href="#-quick-start"><img src="https://img.shields.io/badge/Quick_Start-5_min-blue?style=for-the-badge" alt="Quick Start"></a>
   <a href="https://hkuds.github.io/CLI-Anything/"><img src="https://img.shields.io/badge/CLI_Hub-Browse_%26_Install-ff69b4?style=for-the-badge" alt="CLI Hub"></a>
-  <a href="#-demonstrations"><img src="https://img.shields.io/badge/Demos-33_Apps-green?style=for-the-badge" alt="Demos"></a>
-  <a href="#-test-results"><img src="https://img.shields.io/badge/Tests-2%2C356_Passing-brightgreen?style=for-the-badge" alt="Tests"></a>
+  <a href="#-demonstrations"><img src="https://img.shields.io/badge/Demos-34_Apps-green?style=for-the-badge" alt="Demos"></a>
+  <a href="#-test-results"><img src="https://img.shields.io/badge/Tests-2%2C402_Passing-brightgreen?style=for-the-badge" alt="Tests"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="License"></a>
 </p>
 
@@ -44,6 +44,8 @@ CLI-Anything: Bridging the Gap Between AI Agents and the World's Software</stron
 ## 📰 News
 
 > Thanks to all invaluable efforts from the community! More updates continuously on the way everyday..
+
+- **2026-04-16** 📈 **Unreal Insights CLI** expanded — added background capture session control (`capture start/status/snapshot/stop`), engine-root-matched `UnrealInsights.exe` resolution/build flows, and refreshed docs/tests for the new orchestration workflow.
 
 - **2026-04-15** 🌐 **CLI-Hub** updated to **v0.2.0** — the PyPI package now supports public CLIs from multiple install sources (`pip`, `npm`, `brew`, bundled/system tools), backed by a new `public_registry.json`. The Hub frontend was redesigned with separate **CLI-Anything CLIs** and **Public CLIs** decks, and live end-to-end checks now cover real install, update, and uninstall flows across both pip and npm packages.
 
@@ -587,7 +589,7 @@ AI agents are great at reasoning but terrible at using real professional softwar
 | 💸 "UI automation breaks constantly" | No screenshots, no clicking, no RPA fragility. Pure command-line reliability with structured interfaces |
 | 📊 "Agents need structured data" | Built-in JSON output for seamless agent consumption + human-readable formats for debugging |
 | 🔧 "Custom integrations are expensive" | One Claude plugin auto-generates CLIs for ANY codebase through proven 7-phase pipeline |
-| ⚡ "Prototype vs Production gap" | 2,356 counted tests across 30 battle-tested applications, plus 3 newer integrations already documented |
+| ⚡ "Prototype vs Production gap" | 2,402 counted tests across 31 battle-tested applications, plus 3 newer integrations already documented |
 
 ---
 
@@ -746,7 +748,7 @@ An agent uses the VideoCaptioner CLI to automatically generate and overlay style
 CLI-Anything works on any software with a codebase — no domain restrictions or architectural limitations.
 
 ### 🏭 Professional-Grade Testing
-Showcases 33 application integrations, including 30 with 2,356 counted passing tests across creative, productivity, communication, native debugging, GPU debugging, diagramming, AI image generation, AI content generation, network ad blocking, and local LLM inference workflows.
+Showcases 34 application integrations, including 31 with 2,402 counted passing tests across creative, productivity, communication, native debugging, GPU debugging, performance profiling, diagramming, AI image generation, AI content generation, network ad blocking, and local LLM inference workflows.
 
 ### 🎨 Diverse Domain Coverage
 From creative workflows (image editing, 3D modeling, vector graphics) to production tools (audio, office, live streaming, video editing).
@@ -987,6 +989,13 @@ Each application received complete, production-ready CLI interfaces — not demo
 <td align="center">✅ 40</td>
 </tr>
 <tr>
+<td align="center"><strong>📈 <a href="unrealinsights/agent-harness/">Unreal Insights</a></strong></td>
+<td>Performance Profiling</td>
+<td><code>cli-anything-unrealinsights</code></td>
+<td>Background trace sessions + engine-matched UnrealInsights build + headless export</td>
+<td align="center">✅ 46</td>
+</tr>
+<tr>
 <td align="center"><strong>☁️ <a href="cloudanalyzer/agent-harness/">CloudAnalyzer</a></strong></td>
 <td>Point cloud / trajectory QA</td>
 <td><code>cli-anything-cloudanalyzer</code></td>
@@ -995,11 +1004,11 @@ Each application received complete, production-ready CLI interfaces — not demo
 </tr>
 <tr>
 <td align="center" colspan="4"><strong>Total</strong></td>
-<td align="center"><strong>✅ 2,356</strong></td>
+<td align="center"><strong>✅ 2,402</strong></td>
 </tr>
 </table>
 
-> **100% pass rate** across all 2,356 counted tests in the table above, with newer integrations called out separately where they are still marked as "New" or "55+ cmds".
+> **100% pass rate** across all 2,402 counted tests in the table above, with newer integrations called out separately where they are still marked as "New" or "55+ cmds".
 
 ---
 
@@ -1046,9 +1055,10 @@ cloudcompare   88 passed  ✅   (49 unit + 39 e2e)
 exa            40 passed  ✅   (API + CLI coverage)
 nsight-graphics 32 passed ✅   (31 unit + 1 e2e)
 openscreen    101 passed  ✅   (78 unit + 23 e2e)
+unrealinsights 46 passed  ✅   (46 unit + 0 e2e smoke-gated)
 cloudanalyzer  14 passed  ✅   (7 unit + 7 e2e)
 ──────────────────────────────────────────────────────────────────────────────
-TOTAL        2,356 passed  ✅   100% pass rate
+TOTAL        2,402 passed  ✅   100% pass rate
 ```
 
 ---
@@ -1123,12 +1133,13 @@ cli-anything/
 ├── 🎨 sketch/agent-harness/             # Sketch CLI (19 tests, Node.js)
 ├── 🔬 renderdoc/agent-harness/          # RenderDoc CLI (59 tests)
 ├── 🐞 lldb/agent-harness/               # LLDB CLI (21 tests)
+├── 📈 unrealinsights/agent-harness/     # Unreal Insights CLI (46 tests)
 ├── 🎬 videocaptioner/agent-harness/     # VideoCaptioner CLI (26 tests)
 ├── 🎬 openscreen/agent-harness/         # Openscreen CLI — screen recording editor (101 tests)
 ├── ☁️ cloudcompare/agent-harness/       # CloudCompare CLI (88 tests)
 ├── 🔍 exa/agent-harness/                # Exa CLI (40 tests)
-└── ⛅ cloudanalyzer/agent-harness/      # CloudAnalyzer CLI (14 tests)
 ├── 🟩 nsight-graphics/agent-harness/    # Nsight Graphics CLI (32 tests)
+└── ⛅ cloudanalyzer/agent-harness/      # CloudAnalyzer CLI (14 tests)
 ```
 
 Each `agent-harness/` contains an installable Python package under `cli_anything.<software>/` with Click CLI, core modules, utils (including `repl_skin.py` and backend wrapper), and comprehensive tests.
@@ -1229,7 +1240,7 @@ HARNESS.md is our definitive SOP for making any software agent-accessible via au
 
 It encodes proven patterns and methodologies refined through automated generation processes.
 
-The playbook distills key insights from successfully building all 33 diverse, production-ready harnesses.
+The playbook distills key insights from successfully building all 34 diverse, production-ready harnesses.
 
 ### Critical Lessons
 
@@ -1354,7 +1365,7 @@ MIT License — free to use, modify, and distribute.
 
 **CLI-Anything** — *Make any software with a codebase Agent-native.*
 
-<sub>A methodology for the age of AI agents | 33 professional software demos | 2,356 passing tests</sub>
+<sub>A methodology for the age of AI agents | 34 professional software demos | 2,402 passing tests</sub>
 
 <br>
 

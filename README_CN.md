@@ -9,8 +9,8 @@ CLI-Anything：连接 AI Agent 与全世界软件的桥梁</strong><br>
 
 <p align="center">
   <a href="#-快速上手"><img src="https://img.shields.io/badge/快速上手-5_分钟-blue?style=for-the-badge" alt="Quick Start"></a>
-  <a href="#-实测展示"><img src="https://img.shields.io/badge/Demo-16_款软件-green?style=for-the-badge" alt="Demos"></a>
-  <a href="#-测试结果"><img src="https://img.shields.io/badge/测试-1%2C681_通过-brightgreen?style=for-the-badge" alt="Tests"></a>
+  <a href="#-实测展示"><img src="https://img.shields.io/badge/Demo-17_款软件-green?style=for-the-badge" alt="Demos"></a>
+  <a href="#-测试结果"><img src="https://img.shields.io/badge/测试-1%2C727_通过-brightgreen?style=for-the-badge" alt="Tests"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="License"></a>
 </p>
 
@@ -472,7 +472,7 @@ CLI-Anything 适用于任何有代码库的软件 —— 不限领域，不限�
 
 ### 🏭 专业级测试
 
-在 16 款复杂应用上进行了实测，涵盖创意、生产力、通信、图表、原生调试、GPU 调试和 AI 内容生成领域 —— 这些软件此前对 AI Agent 来说几乎不可触及。
+在 17 款复杂应用上进行了实测，涵盖创意、生产力、通信、图表、原生调试、GPU 调试、性能分析和 AI 内容生成领域 —— 这些软件此前对 AI Agent 来说几乎不可触及。
 
 ### 🎨 覆盖多元领域
 
@@ -589,6 +589,13 @@ CLI-Anything 适用于任何有代码库的软件 —— 不限领域，不限�
 <td align="center">✅ 50</td>
 </tr>
 <tr>
+<td align="center"><strong>📈 <a href="unrealinsights/agent-harness/">Unreal Insights</a></strong></td>
+<td>性能分析</td>
+<td><code>cli-anything-unrealinsights</code></td>
+<td>后台 trace 会话 + 匹配版 UnrealInsights 构建 + 无头导出</td>
+<td align="center">✅ 46</td>
+</tr>
+<tr>
 <td align="center"><strong>🎨 Sketch</strong></td>
 <td>UI 设计</td>
 <td><code>sketch-cli</code></td>
@@ -604,11 +611,11 @@ CLI-Anything 适用于任何有代码库的软件 —— 不限领域，不限�
 </tr>
 <tr>
 <td align="center" colspan="4"><strong>合计</strong></td>
-<td align="center"><strong>✅ 1,681</strong></td>
+<td align="center"><strong>✅ 1,727</strong></td>
 </tr>
 </table>
 
-> 全部 1,681 项测试 **100% 通过** —— 1,200 项单元测试 + 462 项端到端测试 + 19 项 Node.js 测试。
+> 全部 1,727 项测试 **100% 通过** —— 1,246 项单元测试 + 462 项端到端测试 + 19 项 Node.js 测试。
 
 ---
 
@@ -638,10 +645,11 @@ zoom           22 passed  ✅   (22 unit + 0 e2e)
 drawio        138 passed  ✅   (116 unit + 22 e2e)
 lldb           21 passed  ✅   (18 unit + 3 e2e, 1 core e2e skipped)
 anygen         50 passed  ✅   (40 unit + 10 e2e)
+unrealinsights 46 passed  ✅   (46 unit + 0 e2e smoke-gated)
 sketch         19 passed  ✅   (19 jest, Node.js)
 nsight-graphics 32 passed ✅   (31 unit + 1 e2e)
 ──────────────────────────────────────────────────────────────────────────────
-TOTAL        1,681 passed  ✅   100% pass rate
+TOTAL        1,727 passed  ✅   100% pass rate
 ```
 
 ---
@@ -709,6 +717,7 @@ cli-anything/
 ├── 📐 drawio/agent-harness/             # Draw.io CLI（138 项测试）
 ├── 🐞 lldb/agent-harness/               # LLDB CLI（21 项测试）
 ├── ✨ anygen/agent-harness/             # AnyGen CLI（50 项测试）
+├── 📈 unrealinsights/agent-harness/     # Unreal Insights CLI（46 项测试）
 ├── 🎨 sketch/agent-harness/             # Sketch CLI（19 项测试，Node.js）
 └── 🟩 nsight-graphics/agent-harness/    # Nsight Graphics CLI（32 项测试）
 ```
