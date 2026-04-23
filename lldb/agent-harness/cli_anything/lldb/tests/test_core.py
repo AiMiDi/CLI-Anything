@@ -10,6 +10,8 @@ import json
 import os
 import subprocess
 import sys
+import threading
+import time
 from pathlib import Path
 from unittest.mock import MagicMock, patch
 
@@ -339,3 +341,43 @@ class TestCLISubprocess:
         result = self._run(["--help"])
         assert result.returncode == 0
         assert "LLDB CLI" in result.stdout
+
+
+class TestSessionServerAuth:
+    def test_wrong_token_is_rejected(self, tmp_path):
+        from cli_anything.lldb.utils import session_client, session_server
+
+        state_file = tmp_path / "lldb-session.json"
+        server_thread = threading.Thread(
+            target=session_server.serve,
+            args=(state_file,),
+            kwargs={"idle_timeout": 5},
+            daemon=True,
+        )
+        server_thread.start()
+
+        deadline = time.time() + 5
+        while time.time() < deadline and not state_file.exists():
+            time.sleep(0.05)
+
+        assert state_file.exists(), "Session server did not publish its state file"
+
+        state = json.loads(state_file.read_text(encoding="utf-8"))
+        valid_token = state["token"]
+
+        state["token"] = "invalid-token"
+        state_file.write_text(json.dumps(state), encoding="utf-8")
+
+        response = session_client._request(state_file, "ping")
+        assert response["ok"] is False
+        assert response["type"] == "PermissionError"
+        assert response["error"] == "Unauthorized session client"
+
+        state["token"] = valid_token
+        state_file.write_text(json.dumps(state), encoding="utf-8")
+
+        shutdown = session_client._request(state_file, "shutdown")
+        assert shutdown["ok"] is True
+
+        server_thread.join(timeout=5)
+        assert not server_thread.is_alive()
